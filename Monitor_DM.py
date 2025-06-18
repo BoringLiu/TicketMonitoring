@@ -30,9 +30,18 @@ class DM(Monitor):
 
     def get_show_infos(self):
         show_id = self.show_info.get('show_id')
+        print(show_id)
         response = self.request(self.show_url(show_id))
+        print(response.json())
         data = self.get_data_from_response(response)
-        show_info = data.get("detailViewComponentMap").get("item")
+        # show_info = data.get("detailViewComponentMap").get("item")
+        print(data)
+        detail_map = data.get("detailViewComponentMap")
+        print(detail_map)
+        if detail_map is None:
+            raise ValueError("❌ 响应数据中没有 detailViewComponentMap，可能是请求失败或结构变化")
+
+        show_info = detail_map.get("item")
         for session in show_info.get("item").get("performBases"):
             session_id = session.get("performs")[0].get("performId")
             session_name = session.get("performs")[0].get("performName")
@@ -156,16 +165,16 @@ class DM(Monitor):
                 cookies={
                     'csg': '354a0bd6',
                     '_hvn_login': '18',
-                    'munb': '2218951629204',
-                    'usercode': '532127652',
+                    'munb': '2215514550779',
+                    'usercode': '227127748',
                     '_samesite_flag_': 'true',
-                    'havanaId': '2218951629204',
-                    '_tb_token_': 'ee5b537387ee1',
-                    't': '0bdf4d2eef5a59975c4922c8c7f6e4e9',
-                    'dm_nickname': '%E9%BA%A6%E5%AD%90acCkX',
-                    'cookie2': '1318094fd8689145b9831b581c396fd7',
-                    'isg': 'BHNzJUGRECbwetx5Cy3BQP_hCHOdqAdqdBfSKyUQwxLpJJLGrXi_uPTm2NLKn19i',
-                    'sgcookie': 'E1003SPW8GLYK1h1JSPuDtsWj%2BRUfcdScMMELTEgntdA8gUL8jBP6A%2FNdboy6gkOaXqPqMfWZ4pDm8%2F8y67DAT2YyXEGgIPKriLaP3KRUtQrBvY%3D',
+                    'havanaId': '2215514550779',
+                    '_tb_token_': 'e78561b5a6183',
+                    't': '67b26428dfee5c2f902f15c79189c78e	',
+                    'dm_nickname': '%E5%91%A6%E5%91%A6%E9%B9%BF%E9%B8%A3_',
+                    'cookie2': '1846900664a20b2d875adceb3e71fda8',
+                    'isg': 'BJGR3UbbnfJsYPGqOY-uWyVpoJ0r_gVwHsDQ7nMn9tg1GrBsu0zcQFq4uOb8Ep2o',
+                    'sgcookie': 'E100YfwcMY%2By0cO5X%2BH1NoEMCbCHU1HFcditN740ggkxEXv0E53iLxmTZWNmn0BfSw7pyD%2BKYQgPpCmUHI7UjgeavJUVkidGzMAPwePTPGOJpZ4%3D',
                     'tfstk': 'fxqZg89Eor4eA6jl1Ao2Ylpt4Gftmcf53oGjn-2mCfcgC-Dq0WN4CqfThWl06Wd6fc210rPSOStbCS9TJ7wkfl_tcnosDmf5NgsSBRnxmV-vqolTKJHmnF6dDRetDpILjVB3BIkL0VzmmSm3KYHmmC00iHxn9xHDsxxGL9kxthcmmnmHKYkriCVmm9yn9xA9m40XqAgGeAe0o1fVOVhuIfvHKyDyNbyign-VhAuw8Rcemnq3RXMsbfCwQbz7eoPattxmgy4QEXPhnnc4-rqsWmIyEnHnMfEY7IYmSnMEN9WEVMjVfZ9P3ELvkVFtLb6nUELxSvHEN9WekE3T6vl5KY5..',
                     '_m_h5_tk': inner_cookies.get("_m_h5_tk"),
                     '_m_h5_tk_enc': inner_cookies.get("_m_h5_tk_enc"),

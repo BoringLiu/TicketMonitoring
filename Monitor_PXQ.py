@@ -82,7 +82,7 @@ class PXQ(Monitor):
                 'Accept-Language': 'zh-CN,zh',
                 'Sec-Fetch-Site': 'cross-site',
                 'Content-Type': 'application/json',
-                "merchant-id": "6267a80eed218542786f1494",
+                "merchant-id": "681dbf710700d50001c877e1",
                 'Referer': 'https://servicewechat.com/wxad60dd8123a62329/238/page-frame.html',
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 MicroMessenger/6.8.0(0x16080000) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF XWEB/30817',
             },

@@ -5,16 +5,16 @@
   },
   "monitor_list": [
     {
-      "show_id": "925939623046",
-      "show_name": "张杰",
-      "platform": 0,
+      "show_id": "681dbf710700d50001c877e1",
+      "show_name": "凤凰传奇",
+      "platform": 3,
       "deadline": "2025-06-20 00:00:00"
     },
     {
-      "show_id": "379615",
-      "show_name": "测试",
-      "platform": 1,
-      "deadline": "2025-02-15 00:00:00"
+      "show_id": "123123",
+      "show_name": "德云社",
+      "platform":1 ,
+      "deadline": "2025-06-20 00:00:00"
     }
   ],
   "notice":{
