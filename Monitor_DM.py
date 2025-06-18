@@ -72,7 +72,9 @@ class DM(Monitor):
             else:
                 cookies = requests.utils.dict_from_cookiejar(response.cookies)
                 response = self.request(self.seat_url(show_id, ext, c=cookies.get("_m_h5_tk")), cookies=cookies)
-        return json.loads(response.json().get("data",{}).get("legacy",{})) if ext == "show" else json.loads(response.json().get("data").get("result"))
+        # return json.loads(response.json().get("data",{}).get("legacy",{})) if ext == "show" else json.loads(response.json().get("data").get("result"))
+        return response.json().get("data", {}).get("legacy", {}) if ext == "show" else response.json().get("data").get(
+        "result")
 
     @staticmethod
     def get_show_url():
