@@ -1,1 +1,1 @@
-sckey = 'SCT266238TA-xALFKZRZyPQ8pkai4CW8B9cJ'
+sckey = 'your sckey here'
