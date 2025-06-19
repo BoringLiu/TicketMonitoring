@@ -26,7 +26,6 @@
   "notice":{
     "email": "xx@qq.com",
     "interval_sec": 300,
-    "SMTP": "hahaha",
-    "sckey" : "SCT266238TA-xALFKZRZyPQ8pkai4CW8B9cJ"
+    "SMTP": "hahaha"
   }
 }
