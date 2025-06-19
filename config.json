@@ -11,15 +11,22 @@
       "deadline": "2025-06-20 00:00:00"
     },
     {
-      "show_id": "123123",
-      "show_name": "德云社",
-      "platform":1 ,
+      "show_id": "68380e3cd47e490001ac9753",
+      "show_name": "周深",
+      "platform":3 ,
+      "deadline": "2025-06-20 00:00:00"
+    },
+    {
+      "show_id": "490001ac9753",
+      "show_name": "周深",
+      "platform":3 ,
       "deadline": "2025-06-20 00:00:00"
     }
   ],
   "notice":{
     "email": "xx@qq.com",
     "interval_sec": 300,
-    "SMTP": "hahaha"
+    "SMTP": "hahaha",
+    "sckey" : "SCT266238TA-xALFKZRZyPQ8pkai4CW8B9cJ"
   }
 }
