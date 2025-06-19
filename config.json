@@ -8,19 +8,37 @@
       "show_id": "681dbf710700d50001c877e1",
       "show_name": "凤凰传奇",
       "platform": 3,
-      "deadline": "2025-06-20 00:00:00"
+      "deadline": "2025-06-20 12:00:00"
     },
     {
       "show_id": "68380e3cd47e490001ac9753",
-      "show_name": "周深",
+      "show_name": "周深西安",
       "platform":3 ,
-      "deadline": "2025-06-20 00:00:00"
+      "deadline": "2025-06-21 00:00:00"
     },
     {
-      "show_id": "490001ac9753",
-      "show_name": "周深",
+      "show_id": "6805e89a9844af0001f7d5c3",
+      "show_name": "周深青岛",
       "platform":3 ,
-      "deadline": "2025-06-20 00:00:00"
+      "deadline": "2025-06-21 00:00:00"
+    },
+    {
+      "show_id": "684972300fa5c20001e08f05",
+      "show_name": "鹿晗青岛",
+      "platform":3 ,
+      "deadline": "2025-06-21 00:00:00"
+    },
+    {
+      "show_id": "67ebc0e57ef9800001c78b76",
+      "show_name": "陶喆济南",
+      "platform":3 ,
+      "deadline": "2025-06-21 00:00:00"
+    },
+    {
+      "show_id": "67d949067392ca000168001e",
+      "show_name": "大张伟西安",
+      "platform":3 ,
+      "deadline": "2025-06-21 00:00:00"
     }
   ],
   "notice":{

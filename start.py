@@ -41,7 +41,7 @@ class Runner:
                     
                     # Send email notification if enough time has passed
                     if self.email_notifier.should_send(show_id):
-                        result = self.send_wechat_message(f"监控到{show.get('show_name')}有余票",2)
+                        result = self.send_wechat_message(f"监控到{show.get('show_name')} 已回流，请及时购票！",2)
                         logging.info(result)
                         logging.info(f"->发送邮件提醒:{show.get('show_name')}")
                         subject = f"Ticket Alert: {show.get('show_name')}"
@@ -63,10 +63,10 @@ class Runner:
             task = get_task(show)
             if task:
                 self.threadPool.submit(self.loop_monitor, task, show)
-                self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载成功",1)
+                # self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载成功",1)
             else:
                 logging.error(f"监控对象 {show.get('show_name')} 加载失败 show_id: {show.get('show_id')}")
-                self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载失败", 3)
+                # self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载失败", 3)
         self.threadPool.shutdown(wait=True)
 
     def send_wechat_message(self,message,tag):
