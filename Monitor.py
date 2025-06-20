@@ -18,7 +18,10 @@ class Monitor:
     def __init__(self):
         file = open("config.json", "r", encoding="utf-8")
         proxy = json.load(file).get("proxy")
+        # print(proxy)
+
         self._proxy = proxy if proxy else None
+        # print(self._proxy)
         file.close()
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         logging.basicConfig(format='%(asctime)s.%(msecs)03d [%(filename)s:%(lineno)d] : %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)

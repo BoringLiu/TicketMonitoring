@@ -51,6 +51,8 @@ class PXQ(Monitor):
 
         if not self.show_start:
             response = self.request( f'https://m.piaoxingqiu.com/cyy_gatewayapi/show/pub/v3/show/{show_id}/sessions_dynamic_data')
+            # print(response.json())
+            # print(self()._proxy)
             show_info = response.json()
             if show_info.get("statusCode") == 200:
                 for session in show_info.get("data", {}).get("sessionVOs", []):
@@ -60,7 +62,10 @@ class PXQ(Monitor):
         for session in self.show_info.get("session_info"):
             session_id = session.get("session_id")
             response = self.request(f'https://m.piaoxingqiu.com/cyy_gatewayapi/show/pub/v3/show/{show_id}/show_session/{session_id}/seat_plans_dynamic_data')
+            # print(response.json().get("statusCode"))
+            # print(response.json())
             if response.json().get("statusCode") == 200:
+                # print(response.json())
                 can_buy_list.extend(
                     seat.get("seatPlanId") for seat in response.json().get("data", {}).get("seatPlans", [])
                     if seat.get("canBuyCount", 0) > 0
@@ -82,11 +87,11 @@ class PXQ(Monitor):
                 'Accept-Language': 'zh-CN,zh',
                 'Sec-Fetch-Site': 'cross-site',
                 'Content-Type': 'application/json',
-                "merchant-id": "681dbf710700d50001c877e1",
+                "merchant-id": "5c2c4ed0c756b1427585be21",
                 'Referer': 'https://servicewechat.com/wxad60dd8123a62329/238/page-frame.html',
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 MicroMessenger/6.8.0(0x16080000) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF XWEB/30817',
             },
-            proxies=super()._proxy,
+            proxies=self._proxy,
             verify=False,
             timeout=10
         )

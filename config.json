@@ -1,45 +1,37 @@
 {
-  "proxy": null,
+  "proxy": {
+         "http": "http://127.0.0.1:12315",
+         "https": "http://127.0.0.1:12315"
+  },
   "token": {
     "my": "登陆小程序后抓包获取token"
   },
   "monitor_list": [
     {
-      "show_id": "68380e3cd47e490001ac9753",
-      "show_name": "周深西安",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
+       "show_id": "67ebc0e57ef9800001c78b76",
+       "show_name": "陶喆济南",
+       "platform":3 ,
+       "deadline": "2025-06-25 00:00:00"
     },
     {
-      "show_id": "6805e89a9844af0001f7d5c3",
-      "show_name": "周深青岛",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
+       "show_id": "6805e89a9844af0001f7d5c3",
+       "show_name": "周深青岛",
+       "platform":3 ,
+       "deadline": "2025-06-25 00:00:00"
     },
     {
-      "show_id": "684972300fa5c20001e08f05",
-      "show_name": "鹿晗青岛",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
+       "show_id": "684972300fa5c20001e08f05",
+       "show_name": "鹿晗青岛",
+       "platform":3 ,
+       "deadline": "2025-06-25 00:00:00"
     },
     {
-      "show_id": "67d949067392ca000168001e",
-      "show_name": "大张伟西安",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
-    },
-    {
-      "show_id": "67ebc0e57ef9800001c78b76",
-      "show_name": "陶喆济南",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
-    },
-    {
-      "show_id": "67f4da63a9c05d00014736a9",
-      "show_name": "朗朗西安",
-      "platform":3 ,
-      "deadline": "2025-06-25 00:00:00"
+       "show_id": "67e3bc4d212b0d0001c81b8b",
+       "show_name": "王心凌杭州",
+       "platform":3 ,
+       "deadline": "2025-06-25 00:00:00"
     }
+
   ],
   "notice":{
     "email": "xx@qq.com",
