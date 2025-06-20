@@ -58,7 +58,7 @@ class Runner:
         file = open("config.json", "r", encoding="utf-8")
         show_list = json.load(file).get("monitor_list")
         file.close()
-
+        self.send_wechat_message("开始余票监控了", 1)
         for show in show_list:
             task = get_task(show)
             if task:
