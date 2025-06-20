@@ -52,7 +52,7 @@ class Runner:
             except Exception as e:
                 logging.info(f"发生错误：{e}")
             finally:
-                time.sleep(2)
+                time.sleep(1)
 
     def start(self):
         file = open("config.json", "r", encoding="utf-8")
