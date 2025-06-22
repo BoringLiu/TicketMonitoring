@@ -60,15 +60,30 @@ class Runner:
         file = open("config.json", "r", encoding="utf-8")
         show_list = json.load(file).get("monitor_list")
         file.close()
-        self.send_wechat_message("开始余票监控了", 1)
+
+        success_names = []
+
+        # show_names = [show.get("show_name") for show in show_list if show.get("show_name")]
+        # shows_str = "，".join(show_names)
+        #
+        # # self.send_wechat_message("开始余票监控了", 1)
+        # self.send_wechat_message(f"开始余票监控了，监控场次：{shows_str}", 1)
         for show in show_list:
             task = get_task(show)
             if task:
                 self.threadPool.submit(self.loop_monitor, task, show)
+                success_names.append(show.get("show_name"))
                 # self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载成功",1)
             else:
                 logging.error(f"监控对象 {show.get('show_name')} 加载失败 show_id: {show.get('show_id')}")
-                # self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载失败", 3)
+                self.send_wechat_message(f"监控对象 {show.get('show_name')} 加载失败", 3)
+
+        if success_names:
+            shows_str = "，".join(success_names)
+            self.send_wechat_message(f"✅ 开始余票监控了，监控场次：{shows_str}", 1)
+        else:
+            self.send_wechat_message("⚠️ 无任何场次成功加载，监控未启动！", 3)
+
         self.threadPool.shutdown(wait=True)
 
     def send_wechat_message(self,message,tag):
