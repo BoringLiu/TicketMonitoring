@@ -15,7 +15,7 @@ class EmailNotifier:
         """检查是否应该发送邮件"""
         current_time = time.time()
         last_sent = self.last_sent.get(identifier, 0)
-        interval = self.config.get("notice", {}).get("interval_sec", 60)
+        interval = self.config.get("notice", {}).get("interval_sec", 180)
         if current_time - last_sent >= interval:
             self.last_sent[identifier] = current_time
             return True

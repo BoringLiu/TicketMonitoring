@@ -93,5 +93,5 @@ class PXQ(Monitor):
             },
             proxies=self._proxy,
             verify=False,
-            timeout=10
+            timeout=20
         )

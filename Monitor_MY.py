@@ -66,7 +66,7 @@ class MY(Monitor):
             headers=MY.headers(),
             proxies=super()._proxy,
             verify=False,
-            timeout=10
+            timeout=20
         )
 
     @staticmethod

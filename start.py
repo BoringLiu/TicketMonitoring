@@ -42,6 +42,8 @@ class Runner:
                     # Send email notification if enough time has passed
                     if self.email_notifier.should_send(show_id):
                         result = self.send_wechat_message(f"监控到{show.get('show_name')} 已回流，请及时购票！",2)
+                        result = self.send_wechat_message(f"监控到{show.get('show_name')} 已回流，请及时购票！", 2)
+                        result = self.send_wechat_message(f"监控到{show.get('show_name')} 已回流，请及时购票！", 2)
                         logging.info(result)
                         logging.info(f"->发送邮件提醒:{show.get('show_name')}")
                         subject = f"Ticket Alert: {show.get('show_name')}"
@@ -50,9 +52,9 @@ class Runner:
                     logging.info(info)
                     monitor.bark_alert(info)
             except Exception as e:
-                logging.info(f"发生错误：{e}")
+                logging.info(f"发 生错误：{e}")
             finally:
-                time.sleep(1)
+                time.sleep(2)
 
     def start(self):
         file = open("config.json", "r", encoding="utf-8")
